@@ -12,7 +12,7 @@ function preload() {
   titleImage = loadImage('assets/martian_mayhem_text.png');
   hiScoreImage = loadImage('assets/hi-score_text.png');
   crosshairImage = loadImage('assets/crosshair_sprite.png');
-  alienImage = loadImage('assets/alien_sprite_large_titlescreen.png')
+  alienImage = loadImage('assets/alien_sprite_large_titlescreen.png');
 }
 
 function setup() {
