@@ -7,6 +7,7 @@ let score = 0;
 let hiScore = 0;
 let timer = 30; 
 let gameState = "title"; 
+let mouseWasPressed = false;
 
 function preload() {
   titleImage = loadImage('assets/martian_mayhem_text.png');
@@ -113,12 +114,17 @@ function resultScreen() {
 }
 
 function handleInput() {
+  if (mouseIsPressed && !mouseWasPressed) { // Prevent holding down the mouse input
   // Check if mouse hits current target & removes it from the canvas
   for (let i = targets.length - 1; i >= 0; i--) {
-    if (targets[i].hit(mouseX, mouseY) && mouseIsPressed) {
+    if (targets[i].hit(mouseX, mouseY)) {
       score += 10;
-      targets.splice(i, 1);
+        targets.splice(i, 1);
+      }
     }
+    mouseWasPressed = true;
+  } else if (!mouseIsPressed) {
+    mouseWasPressed = false;
   }
 }
 
