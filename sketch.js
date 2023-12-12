@@ -53,7 +53,6 @@ function titleScreen() {
 
 function gameScreen() {
   handleInput();
-
   // Display score, timer, and hi-score
   fill(255);
   textAlign(LEFT);
